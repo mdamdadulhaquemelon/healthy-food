@@ -1,0 +1,692 @@
+/*+-----------------------------------------------------------+
+  |                                                           |
+  |    Template Name:          |
+  |    Author: themesitem                                     |
+  |    Author Email: themesitem.cit@gmail.com                 |
+  |    Version: 1.00                                          |
+  |                                                           |
+  +-----------------------------------------------------------+*/
+/* CSS Index 
+-----------------------------------
+1. Theme default css
+2. Index Page 
+        |----> Header css
+        |----> Sticky header css
+        |----> Banner Css
+        |----> About Css
+        |----> Product Css
+        |----> Event Css
+        |----> Offer Css
+        |----> Updates Css
+        |----> Footer Css
+        |----> Copyright Css
+3. Our Story Page
+        |----> Inner Page Title css
+        |----> About Part css
+        |----> Achievement Css
+4. Our Product Page
+5. Contact page
+        |----> Left img css
+        |----> Contact-form Css
+6. Error404 Page
+7. Blog-Details
+*/
+/*===========================
+    1. Theme default css 
+===========================*/
+/* Google Fonts Css */
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Arimo:400,700|Great+Vibes|Montserrat+Alternates&display=swap');
+
+/* Local Fonts Css */
+@font-face {
+    font-family: "adinekirnberg";
+    src: url("../fonts/adinekirnberg-script.regular.eot");
+    src: url("../fonts/adinekirnberg-script.regular.eot")format("embedded-opentype"),
+        url("../fonts/adinekirnberg-script.regular.woff2")format("woff2"),
+        url("../fonts/AdineKirnberg-Script.woff")format("woff"),
+        url("../fonts/adinekirnberg-script.regular.ttf") format("truetype"),
+        url("../fonts/AdineKirnberg-Script.svg")format("svg");
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.img {
+    max-width: 100%;
+    vertical-align: middle;
+    transition: all .3s linear 0s;
+    -webkit-transition: all .3s linear 0s;
+    -moz-transition: all .3s linear 0s;
+    -ms-transition: all .3s linear 0s;
+    -o-transition: all .3s linear 0s;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+span,
+a {
+    display: inline-block;
+}
+
+a,
+button {
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat";
+    font-weight: 700;
+    color: #21243d;
+    margin-top: 0px;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+ul,
+ol {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #444444;
+    margin-bottom: 0px;
+}
+
+/*== All Button Style ==*/
+.theme_btn a {
+    padding: 20px 75px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.theme_btn a:hover {
+    color: #ffffff;
+}
+
+.bg_cover {
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    width: 100%;
+    height: 100%;
+}
+
+.text-space {
+    letter-spacing: 10px;
+}
+
+/* Theme color */
+.theme_color {
+    color: #21243d;
+}
+
+.theme_color_bg {
+    background: #21243d;
+}
+
+/*== All section title here ==*/
+.section_title h2 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+
+.section_title p {
+    color: #ffffff;
+    padding: 0 250px;
+}
+
+.search_overlay {
+    position: fixed;
+    overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+    background: #21243dc9;
+    z-index: 99999;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+.search_overlay.active {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
+.search_overlay .close_btn {
+    background: transparent;
+    border: transparent;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #fff;
+    z-index: 999;
+}
+
+.search_overlay .search_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    display: flex;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.search_overlay .search_box input {
+    border: transparent;
+    padding: 10px 0;
+    background: transparent;
+    width: 300px;
+    padding-left: 15px;
+}
+
+.search_overlay .search_box button {
+    background: transparent;
+    border: transparent;
+    padding-right: 15px;
+}
+
+/*===========================
+    Index Page Css Start 
+===========================*/
+
+
+/*===========================
+    HEADER CSS 
+=============================*/
+/* header area */
+.logo {
+    padding: 26px 0;
+}
+
+.logo.hedden {
+    opacity: 0;
+    visibility: hidden;
+}
+.navbar_collapse{
+    margin: auto;
+  }
+.menu_bar {
+    margin: auto;
+    height: 100%;
+}
+
+.menu_bar .main_menu {
+    text-align: center;
+    width: 100%;
+}
+
+.menu_bar .main_menu .menu_items {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.menu_bar .main_menu .menu_items .item_link {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+
+.header_area .search_btn {
+    position: relative;
+    height: 100%;
+}
+
+.header_area .search_btn button {
+    display: contents;
+}
+
+.header_area .search_btn button i {
+    color: #ffffff;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+/*===========================
+     STICKY HEADER CSS 
+=============================*/
+/*For Animation*/
+
+/*===========================
+    BANNER PART CSS 
+===========================*/
+.banner_info {
+    padding: 150px 0;
+}
+
+.banner_info .banner_text h1 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.banner_info .banner_text p {
+    color: #ffffff;
+    padding-right: 483px;
+    margin-bottom: 40px;
+}
+
+/*===========================
+    MENU PART CSS 
+===========================*/
+.single_menu {
+    margin-top: 70px;
+}
+
+.single_menu .menu_img {
+    width: 230px;
+    height: 230px;
+    margin: auto;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.single_menu .menu_text {
+    text-align: center;
+}
+
+.single_menu .menu_text h3 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.single_menu .menu_text p {
+    color: #fff;
+    padding: 0 12px;
+}
+
+/*===========================
+    ORDER PART CSS 
+===========================*/
+/* order part left */
+.order_product_img {
+    width: 465px;
+    height: 465px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.order_area .section_title {
+    margin-top: 80px;
+    text-align: left;
+}
+
+.order_area .section_title h2 {
+    color: #21243d;
+    margin-bottom: 50px;
+}
+
+.order_area .section_title p {
+    color: #21243d;
+    padding: 0;
+    padding-right: 116px;
+    margin-bottom: 60px;
+}
+
+/* order part right */
+/*===========================
+    STATISTIC PART CSS 
+===========================*/
+.single_count {
+    margin-top: 90px;
+}
+
+.single_count .count_items {
+    width: 260px;
+    height: 260px;
+    margin: auto;
+    text-align: center;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.count_items .count_number {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1;
+    padding-top: 80px;
+}
+
+.count_items h5 {
+    font-size: 40px;
+    padding-top: 8px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*===========================
+    PROFILE PART CSS 
+===========================*/
+.profile_area .bg_overlay {
+    background: #12172bb7;
+}
+
+.single_profile {
+    text-align: center;
+}
+
+.single_profile .profile_img {
+    width: 230px;
+    height: 230px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.single_profile .profile_text {
+    padding-top: 50px;
+}
+
+.single_profile .profile_text p {
+    color: #fff;
+    text-transform: lowercase;
+    padding: 0 198px;
+}
+
+.single_profile .profile_text h4 {
+    color: #fff;
+    font-size: 24px;
+    padding-top: 25px;
+}
+
+/*===========================
+    SUBSCRIBE PART CSS 
+===========================*/
+.subscribe_area {
+    background: #ffd17e;
+}
+
+.subscribe_area .section_title h2 {
+    color: #21243d;
+}
+
+.subscribe_area .section_title p {
+    color: #21243d;
+}
+
+.subscribe_box {
+    margin: auto;
+    margin-top: 80px;
+    width: 700px;
+    position: relative;
+    background: #fff;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.subscribe_box input {
+    margin-right: auto;
+    width: 60%;
+    border: none;
+    background: none;
+    padding-left: 20px;
+}
+
+.subscribe_box .theme_btn {
+    text-align: right;
+    margin-left: auto;
+}
+
+/*===========================
+    FOOTER-PART CSS 
+===========================*/
+footer {
+    background: #111111;
+}
+
+footer .section_title h2 {
+    font-size: 24px;
+}
+
+footer .section_title p {
+    padding: 0;
+}
+
+footer .social_icon {
+    padding-top: 20px;
+}
+
+footer .social_icon .icon_box {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #444444;
+    text-align: center;
+    line-height: 35px;
+    margin-top: 15px;
+    transition: all .3s linear;
+}
+
+/* footer-nav */
+/* quick about */
+.quick_links h5 {
+    font-size: 24px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.quick_links .items_list li {
+    margin-bottom: 16px;
+}
+
+.quick_links .items_list li a {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+
+
+/*===========================
+    COPYRIGHT-PART CSS 
+===========================*/
+.copyright_text {
+    padding-top: 31px;
+}
+
+.copyright_text p {
+    color: #fff;
+}
+
+/* ========= Back-to-top button css ========== */
+.back_to_top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #1D2228;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: all .4s linear;
+    -webkit-transition: all .4s linear;
+    -moz-transition: all .4s linear;
+    -ms-transition: all .4s linear;
+    -o-transition: all .4s linear;
+}
+
+.back_to_top:hover {
+    background: #e3d1b8;
+    color: #12172b;
+}
+
+/*===========================
+    Index Page Css End 
+===========================*/
+
+
+
+
+
+/*===========================
+    Our-Story Page Css Start 
+===========================*/
+/* inner-bg */
+
+
+
+
+
+
+/*===========================
+  INNER-PAGE TITLE CSS
+===========================*/
+
+/*===========================
+  ABOUT PART CSS
+===========================*/
+
+/*===========================
+    ACHIEVEMENT PART CSS 
+===========================*/
+
+
+/*===========================
+    Our-Story Page Css End 
+===========================*/
+/*===========================
+    Product-Page Css Start 
+===========================*/
+
+
+/*===========================
+    Product-Page Css End 
+===========================*/
+/*===========================
+  Contact-Page Css Start 
+===========================*/
+
+
+/*===========================
+    Contact-Page Css End 
+===========================*/
+/*===========================
+    Error-Page Css Start 
+===========================*/
+
+/*===========================
+    Error-Page Css End 
+===========================*/
+/*========================================
+            Blog Details page  Start 
+========================================*/
+
+/*========================================
+          Blog Details page  End 
+========================================*/
